@@ -98,9 +98,6 @@
     <Compile Include="clases\banderas.asm">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="clases\clk.asm">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="clases\contador-binario.asm">
       <SubType>Code</SubType>
     </Compile>
