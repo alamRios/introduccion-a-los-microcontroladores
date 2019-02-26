@@ -107,6 +107,9 @@
     <Compile Include="clases\saltos-condicionales.asm">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="clases\timer0.asm">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="practica1.asm">
       <SubType>Code</SubType>
     </Compile>
