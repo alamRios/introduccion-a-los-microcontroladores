@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.7  C:\Users\Turing\Documents\Atmel Studio\7.0\clase1\clase1\practica1.asm Thu Feb 21 21:01:05 2019
+AVRASM ver. 2.2.7  C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\timer0.asm Thu Feb 28 18:09:16 2019
 
 
 EQU  SIGNATURE_000 0000001e
@@ -685,4 +685,9 @@ EQU  TWIaddr      00000018
 EQU  SPMRaddr     00000019
 EQU  INT_VECTORS_SIZE 0000001a
 DEF  temp         r16
-CSEG main         00000003
+DEF  cuenta       r17
+DEF  bandera      r18
+CSEG reset        00000011
+CSEG timer0_ovf   0000001f
+CSEG main         0000001b
+CSEG salir        00000022

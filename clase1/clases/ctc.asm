@@ -4,12 +4,16 @@
 	.cseg
 	.org 0
 	rjmp reset
-	.org $010
+	.org $00e
 	rjmp timer0_ovf
 
-reset: ldi temp,$05
+reset:ldi temp,$02
+	out tccr0a,temp 
+	ldi temp,$05
 	out tccr0b,temp
-	ldi temp,$01
+	ldi temp,200
+	out ocr0a,temp ; comparacion a 200
+	ldi temp,$02
 	sts timsk0,temp
 	ldi temp,$ff
 	out ddrb,temp
