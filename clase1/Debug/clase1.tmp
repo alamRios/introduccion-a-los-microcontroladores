@@ -7,7 +7,7 @@
   <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
   <DIR>F:\Programas\AVRStudio-4\AvrAssembler2\Appnotes</DIR>
  </INCLUDE_PATH>
- <SOURCE_FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\timer0.asm</SOURCE_FILE>
+ <SOURCE_FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica5.asm</SOURCE_FILE>
  <INCLUDED_FILES>
   <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m48padef.inc</FILE>
  </INCLUDED_FILES>
@@ -22,9 +22,12 @@
   <FILE>clase1.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <reset><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\timer0.asm</FILE><LINE>10</LINE></reset>
-  <timer0_ovf><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\timer0.asm</FILE><LINE>25</LINE></timer0_ovf>
-  <main><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\timer0.asm</FILE><LINE>20</LINE></main>
-  <salir><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\timer0.asm</FILE><LINE>28</LINE></salir>
+  <main><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica5.asm</FILE><LINE>38</LINE></main>
+  <aumentar><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica5.asm</FILE><LINE>46</LINE></aumentar>
+  <decrementar><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica5.asm</FILE><LINE>54</LINE></decrementar>
+  <delay_50m><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica5.asm</FILE><LINE>65</LINE></delay_50m>
+  <limitDec><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica5.asm</FILE><LINE>62</LINE></limitDec>
+  <lazo2><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica5.asm</FILE><LINE>67</LINE></lazo2>
+  <lazo1><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica5.asm</FILE><LINE>69</LINE></lazo1>
  </LABELS>
 </ASSEMBLER_INFO>

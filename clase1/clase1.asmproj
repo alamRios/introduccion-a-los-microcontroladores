@@ -15,7 +15,7 @@
     <Name>clase1</Name>
     <RootNamespace>clase1</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
-    <EntryFile>$(MSBuildProjectDirectory)\clases\timer0.asm</EntryFile>
+    <EntryFile>$(MSBuildProjectDirectory)\practica5.asm</EntryFile>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
     <CacheFlash>true</CacheFlash>
@@ -101,13 +101,22 @@
     <Compile Include="clases\contador-binario.asm">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="clases\ctc.asm">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="clases\modos-direccionamiento.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="clases\pwm.asm">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="clases\saltos-condicionales.asm">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="clases\timer0.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="clases\timer1.asm">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="practica1.asm">
@@ -117,6 +126,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="practica3.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="practica4.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="practica5.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="practica6.asm">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
