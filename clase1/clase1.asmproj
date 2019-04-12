@@ -15,7 +15,7 @@
     <Name>clase1</Name>
     <RootNamespace>clase1</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
-    <EntryFile>$(MSBuildProjectDirectory)\practica5.asm</EntryFile>
+    <EntryFile>$(MSBuildProjectDirectory)\practica4.asm</EntryFile>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
     <CacheFlash>true</CacheFlash>
@@ -95,6 +95,15 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="clases\adc\adc-ejemplo.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="clases\adc\adc-free-running.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="clases\adc\adc-single.asm">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="clases\banderas.asm">
       <SubType>Code</SubType>
     </Compile>
@@ -137,9 +146,13 @@
     <Compile Include="practica6.asm">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Practica7.asm">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="clases" />
+    <Folder Include="clases\adc" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Assembler.targets" />
 </Project>

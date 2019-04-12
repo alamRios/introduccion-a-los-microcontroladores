@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.7  C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica5.asm Wed Mar 27 20:49:58 2019
+AVRASM ver. 2.2.7  C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica4.asm Thu Apr 11 20:21:56 2019
 
 
 EQU  SIGNATURE_000 0000001e
@@ -684,16 +684,23 @@ EQU  ACIaddr      00000017
 EQU  TWIaddr      00000018
 EQU  SPMRaddr     00000019
 EQU  INT_VECTORS_SIZE 0000001a
-DEF  temp         r16
-DEF  limdec       r19
-DEF  liminc       r20
-DEF  cte          r15
-DEF  cont1        r17
-DEF  cont2        r18
-CSEG main         0000000e
-CSEG aumentar     00000015
-CSEG decrementar  0000001c
-CSEG delay_50m    00000025
-CSEG limitDec     00000023
-CSEG lazo2        00000026
-CSEG lazo1        00000027
+DEF  aux          r16
+DEF  uni          r17
+DEF  dece         r18
+DEF  mux          r19
+DEF  dispU        r20
+DEF  dispD        r21
+DEF  cont1        r23
+DEF  cont2        r24
+CSEG reset        00000011
+CSEG timer_cero   00000043
+CSEG main         00000020
+CSEG disp_7       0000006d
+CSEG lazoU        00000026
+CSEG inc_dec      00000033
+CSEG delay_250ms  0000005c
+CSEG res_dec      00000031
+CSEG lazoD        0000003a
+CSEG delay_1ms    0000004e
+CSEG lazo1        0000004f
+CSEG l1           0000005e
