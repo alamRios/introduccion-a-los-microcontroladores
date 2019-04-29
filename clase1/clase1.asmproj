@@ -15,7 +15,7 @@
     <Name>clase1</Name>
     <RootNamespace>clase1</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
-    <EntryFile>$(MSBuildProjectDirectory)\practica4.asm</EntryFile>
+    <EntryFile>$(MSBuildProjectDirectory)\clases\usart\led-manipulation.asm</EntryFile>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
     <CacheFlash>true</CacheFlash>
@@ -104,6 +104,9 @@
     <Compile Include="clases\adc\adc-single.asm">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="clases\adc\mux-adc.asm">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="clases\banderas.asm">
       <SubType>Code</SubType>
     </Compile>
@@ -126,6 +129,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="clases\timer1.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="clases\usart\led-manipulation.asm">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="practica1.asm">
@@ -153,6 +159,7 @@
   <ItemGroup>
     <Folder Include="clases" />
     <Folder Include="clases\adc" />
+    <Folder Include="clases\usart" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Assembler.targets" />
 </Project>

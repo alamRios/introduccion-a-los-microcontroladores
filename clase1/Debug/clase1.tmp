@@ -7,7 +7,7 @@
   <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
   <DIR>F:\Programas\AVRStudio-4\AvrAssembler2\Appnotes</DIR>
  </INCLUDE_PATH>
- <SOURCE_FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica4.asm</SOURCE_FILE>
+ <SOURCE_FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\usart\led-manipulation.asm</SOURCE_FILE>
  <INCLUDED_FILES>
   <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m48padef.inc</FILE>
  </INCLUDED_FILES>
@@ -22,17 +22,10 @@
   <FILE>clase1.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <reset><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica4.asm</FILE><LINE>14</LINE></reset>
-  <timer_cero><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica4.asm</FILE><LINE>77</LINE></timer_cero>
-  <main><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica4.asm</FILE><LINE>33</LINE></main>
-  <disp_7><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica4.asm</FILE><LINE>128</LINE></disp_7>
-  <lazoU><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica4.asm</FILE><LINE>41</LINE></lazoU>
-  <inc_dec><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica4.asm</FILE><LINE>59</LINE></inc_dec>
-  <delay_250ms><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica4.asm</FILE><LINE>107</LINE></delay_250ms>
-  <res_dec><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica4.asm</FILE><LINE>56</LINE></res_dec>
-  <lazoD><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica4.asm</FILE><LINE>67</LINE></lazoD>
-  <delay_1ms><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica4.asm</FILE><LINE>91</LINE></delay_1ms>
-  <lazo1><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica4.asm</FILE><LINE>93</LINE></lazo1>
-  <l1><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica4.asm</FILE><LINE>110</LINE></l1>
+  <reset><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\usart\led-manipulation.asm</FILE><LINE>15</LINE></reset>
+  <rx_complete><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\usart\led-manipulation.asm</FILE><LINE>43</LINE></rx_complete>
+  <main><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\usart\led-manipulation.asm</FILE><LINE>29</LINE></main>
+  <turn_on><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\usart\led-manipulation.asm</FILE><LINE>35</LINE></turn_on>
+  <turn_off><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\usart\led-manipulation.asm</FILE><LINE>39</LINE></turn_off>
  </LABELS>
 </ASSEMBLER_INFO>

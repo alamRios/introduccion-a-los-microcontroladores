@@ -1,10 +1,10 @@
 
-AVRASM ver. 2.2.7  C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\practica4.asm Thu Apr 11 20:21:56 2019
+AVRASM ver. 2.2.7  C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\usart\led-manipulation.asm Mon Apr 15 21:23:58 2019
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m48padef.inc'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m48padef.inc'
                                  
-                                 .def aux = R16
+                                 /*
                                  
                                  ;***** Created: 2011-02-09 12:03 ******* Source: ATmega48PA.xml **********
                                  ;*************************************************************************
@@ -979,137 +979,48 @@ AVRASM ver. 2.2.7  C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\prac
                                  
                                  ; ***** END OF FILE ******************************************************
                                  
-                                 .def uni = R17
-                                 .def dece = R18
-                                 .def mux = R19
-                                 .def dispU = R20
-                                 .def dispD = R21
-                                 .def cont1 = R23
-                                 .def cont2 = R24
-                                 .cseg
-                                 .org 0
-000000 c010                      rjmp reset
-                                 .org 0x010
-000010 c032                      rjmp timer_cero
-                                 reset:
-                                 	;configuring portc as output
-000011 ef0f                      	ldi aux,0XFF
-000012 b907                      	OUT DDRC,aux
-                                 	;configuring portb as output
-000013 ef0f                      	ldi aux,0XFF
-000014 b904                      	OUT DDRB,aux
-                                 	;configuring timer
-000015 e003                      	ldi aux,0X03
-000016 bd05                      	out tccr0b,aux;setting prescaler in 1024
-000017 e001                      	ldi aux,0x01
-000018 9300 006e                 	sts timsk0,aux;setting overflow interruption
+                                  * echo.asm
+                                  *
+                                  *  Created: 15/04/2019 08:50:19 p. m.
+                                  *   Author: Turing
+                                  */ 
                                  
-00001a 9478                      	sei
-00001b e010                      ldi uni,0x00
-00001c e021                      ldi dece,0x01
-00001d e34f                      ldi dispU,0X3F
-00001e e35f                      ldi dispD,0X3F
-00001f e032                      ldi mux,0x02
-                                 main:
-000020 9513                      	inc uni	
-                                 	;we load the dispaly value constants from
-000021 2f01                      	MOV aux,uni
-000022 edea                      	ldi ZL,low(disp_7*2)
-000023 e0f0                      	ldi ZH,high(disp_7*2)
-000024 e0a0                      	ldi XL,0x00
-000025 e0b1                      	ldi XH,0x01
-                                 	lazoU:
-000026 95c8                      		lpm
-000027 920d                      		st x+,r0
-000028 2d40                      		MOV dispU,r0
-000029 9631                      		adiw ZL,1
-00002a 950a                      		dec aux
-00002b f7d1                      		brne lazoU
-00002c 301b                      	cpi uni,0x0B
-00002d f029                      	breq inc_dec	
-                                 	/*Delay 1s*/
-00002e d02d                      	rcall delay_250ms
-00002f d02c                      	rcall delay_250ms
-                                 	/*rcall delay_250ms
-                                 	rcall delay_250ms*/
-000030 cfef                      	rjmp main
-                                 res_dec:
-000031 e020                      	ldi dece,0x00
-000032 cfed                      	rjmp main
-                                 inc_dec:
-000033 e010                      	ldi uni,0x00
-000034 9523                      	inc dece
-000035 2f02                      	MOV aux,dece
-000036 edea                      	ldi ZL,low(disp_7*2)
-000037 e0f0                      	ldi ZH,high(disp_7*2)
-000038 e0a0                      	ldi XL,0x00
-000039 e0b1                      	ldi XH,0x01
-                                 	lazoD:
-00003a 95c8                      		lpm
-00003b 920d                      		st x+,r0
-00003c 2d50                      		MOV dispD,r0
-00003d 9631                      		adiw ZL,1
-00003e 950a                      		dec aux
-00003f f7d1                      		brne lazoD
-000040 302a                      	cpi dece,0x0A
-000041 f379                      	breq res_dec
-000042 cfdd                      	rjmp main
-                                 timer_cero:
-000043 e033                      	ldi mux,0x03
-000044 b938                      	OUT portc,mux
-000045 e031                      	ldi mux,0x01
-000046 b938                      	OUT portc,mux
-000047 b955                      	OUT portb,dispD
-000048 d005                      	rcall delay_1ms
-000049 d004                      	rcall delay_1ms
-00004a e032                      	ldi mux,0x02
-00004b b938                      	OUT portc,mux
-00004c b945                      	OUT portb,dispU
-                                 	;rcall delay_1ms
-00004d 9518                      	reti
+                                 	.def temp = r16
+                                 	.cseg
+                                 	.org 0
+000000 c012                      	rjmp reset
+                                 	.org $012
+000012 c017                      	rjmp rx_complete
                                  
-                                 delay_1ms:
-00004e e674                      ldi cont1,100
-                                 lazo1:
-00004f 957a                      	dec cont1
-000050 0000                      	nop
-000051 0000                      	nop
-000052 0000                      	nop
-000053 0000                      	nop
-000054 0000                      	nop
-000055 0000                      	nop
-000056 0000                      	nop
-000057 0000                      	nop
-000058 0000                      	nop
-000059 0000                      	nop
-00005a f7a1                      	brne lazo1
-00005b 9508                      	ret
-                                 delay_250ms:
-00005c ef7f                      	ldi cont1,255
-00005d e48b                      	ldi cont2,75		
-                                 	l1:
-00005e 957a                      		dec cont1
-00005f 0000                      		nop
-000060 0000                      		nop
-000061 0000                      		nop
-000062 0000                      		nop
-000063 0000                      		nop
-000064 0000                      		nop
-000065 0000                      		nop
-000066 0000                      		nop
-000067 0000                      		nop
-000068 0000                      		nop
-000069 f7a1                      		brne l1
-00006a 958a                      		dec cont2
-00006b f791                      		brne l1	
-00006c 9508                      	ret
+000013 e001                      reset:ldi temp,$01
+000014 b904                      	out ddrb,temp ; LED at B(0)
                                  
-                                 .cseg        ;0    1    2    3    4    5    6    7    8    9
-00006d 063f
-00006e 4f5b
-00006f 6d66
-000070 077d
-000071 677f                      disp_7: .db 0X3F,0X06,0X5B,0X4F,0X66,0X6D,0X7D,0X07,0x7F,0X67
+000015 e002                      	ldi temp,$02
+000016 b90a                      	out ddrd,temp ; Rx & Tx at portd
+                                 
+000017 9300 00c0                 	sts ucsr0a, temp ; 2x vel
+                                 
+000019 e908                      	ldi temp,$98
+00001a 9300 00c1                 	sts ucsr0b, temp ; interruptions
+                                 
+00001c e00c                      	ldi temp,12
+00001d 9300 00c4                 	sts ubrr0l,temp ; 9600 baud rate
+                                 
+00001f 3300                      main:cpi temp,$30
+000020 f019                      	breq turn_on
+000021 3301                      	cpi temp,$31
+000022 f021                      	breq turn_off
+000023 cffb                      	rjmp main
+                                 
+000024 e001                      turn_on:ldi temp,$01
+000025 b905                      	out portb,temp
+000026 cff8                      	rjmp main
+                                 
+000027 e000                      turn_off:ldi temp,$00
+000028 b905                      	out portb,temp
+000029 cff5                      	rjmp main
+                                 
+00002a 9100 00c6                 rx_complete:lds temp, udr0
 
 
 RESOURCE USE INFORMATION
@@ -1127,39 +1038,39 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATmega48PA" register use summary:
-x  :   2 y  :   0 z  :   0 r0 :   4 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
+x  :   0 y  :   0 z  :   0 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:  12 r17:   5 r18:   5 r19:   7 r20:   3 
-r21:   3 r22:   0 r23:   4 r24:   2 r25:   0 r26:   2 r27:   2 r28:   0 
-r29:   0 r30:   4 r31:   2 
-Registers used: 14 out of 35 (40.0%)
+r13:   0 r14:   0 r15:   0 r16:  16 r17:   0 r18:   0 r19:   0 r20:   0 
+r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
+r29:   0 r30:   0 r31:   0 
+Registers used: 1 out of 35 (2.9%)
 
 "ATmega48PA" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :   0 add   :   0 adiw  :   2 and   :   0 
+.lds  :   0 .sts  :   0 adc   :   0 add   :   0 adiw  :   0 and   :   0 
 andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
 brcc  :   0 brcs  :   0 break :   0 breq  :   2 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
-brne  :   5 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brne  :   0 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
 brvs  :   0 bset  :   0 bst   :   0 cbi   :   0 cbr   :   0 clc   :   0 
 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 clt   :   0 
 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 cpi   :   2 
-cpse  :   0 dec   :   5 eor   :   0 fmul  :   0 fmuls :   0 fmulsu:   0 
-icall :   0 ijmp  :   0 in    :   0 inc   :   2 ld    :   0 ldd   :   0 
-ldi   :  25 lds   :   0 lpm   :   6 lsl   :   0 lsr   :   0 mov   :   4 
-movw  :   0 mul   :   0 muls  :   0 mulsu :   0 neg   :   0 nop   :  20 
-or    :   0 ori   :   0 out   :   8 pop   :   0 push  :   0 rcall :   4 
-ret   :   2 reti  :   1 rjmp  :   5 rol   :   0 ror   :   0 sbc   :   0 
+cpse  :   0 dec   :   0 eor   :   0 fmul  :   0 fmuls :   0 fmulsu:   0 
+icall :   0 ijmp  :   0 in    :   0 inc   :   0 ld    :   0 ldd   :   0 
+ldi   :   6 lds   :   1 lpm   :   0 lsl   :   0 lsr   :   0 mov   :   0 
+movw  :   0 mul   :   0 muls  :   0 mulsu :   0 neg   :   0 nop   :   0 
+or    :   0 ori   :   0 out   :   4 pop   :   0 push  :   0 rcall :   0 
+ret   :   0 reti  :   1 rjmp  :   5 rol   :   0 ror   :   0 sbc   :   0 
 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   0 sbiw  :   0 sbr   :   0 
-sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 sei   :   1 sen   :   0 
+sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 sei   :   0 sen   :   0 
 ser   :   0 ses   :   0 set   :   0 sev   :   0 sez   :   0 sleep :   0 
-spm   :   0 st    :   2 std   :   0 sts   :   1 sub   :   0 subi  :   0 
+spm   :   0 st    :   0 std   :   0 sts   :   3 sub   :   0 subi  :   0 
 swap  :   0 tst   :   0 wdr   :   0 
-Instructions used: 18 out of 111 (16.2%)
+Instructions used: 8 out of 111 (7.2%)
 
 "ATmega48PA" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0000e4    188     10    198    4096   4.8%
+[.cseg] 0x000000 0x00005a     56      0     56    4096   1.4%
 [.dseg] 0x000100 0x000100      0      0      0     512   0.0%
 [.eseg] 0x000000 0x000000      0      0      0     256   0.0%
 
