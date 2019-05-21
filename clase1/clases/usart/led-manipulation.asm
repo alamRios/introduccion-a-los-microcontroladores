@@ -13,10 +13,10 @@
 	rjmp rx_complete
 
 reset:ldi temp,$01
-	out ddrb,temp ; LED at B(0)
+	out ddrb,temp ; LED at B(0) as out
 
 	ldi temp,$02
-	out ddrd,temp ; Rx & Tx at portd
+	out ddrd,temp ; Rx & Tx at portd as in 
 
 	sts ucsr0a, temp ; 2x vel
 
@@ -25,6 +25,8 @@ reset:ldi temp,$01
 
 	ldi temp,12
 	sts ubrr0l,temp ; 9600 baud rate
+
+	sei
 
 main:cpi temp,$30
 	breq turn_on
@@ -40,5 +42,6 @@ turn_off:ldi temp,$00
 	out portb,temp
 	rjmp main
 
-rx_complete:lds temp, udr0
+rx_complete:lds temp, udr0 ; se limpia la bandera al leer
+	sts udr0, temp
 	reti

@@ -6,4 +6,4 @@
  */ 
 
  ; ADC alimentado con VCC 5V
- ; Poner un potenciometro para ver el voltaje en 3 display 7se
+ ; Poner un potenciometro para ver el voltaje en 3 display 7seg

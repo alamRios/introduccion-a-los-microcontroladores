@@ -79,7 +79,7 @@ ldi temp,$81
 out tccr1a,temp
 ldi temp,$09
 out tccr1b,temp
-ldi temp,125
+ldi temp,240
 out ocr1a,temp
 
 main: rjmp main
@@ -89,6 +89,37 @@ main: rjmp main
     trabajo de la señal pwm, es decir los datos que se reciben en la suart modifican el ciclo de trabajo de la 
     señal pwm
 */
+	.def temp = r16
+	.cseg
+	.org 0
+	rjmp reset
+	.org $012
+	rjmp rx_complete
+;reset
+reset:ldi temp,$40
+out ddrd,temp
+
+; timer1
+ldi temp,$81
+out tccr1a,temp
+ldi temp,$09
+out tccr1b,temp
+ldi temp,240
+out ocr1a,temp
+; usart
+ldi temp,$02
+out ddrd,temp ; Rx & Tx at portd
+sts ucsr0a, temp ; 2x vel
+ldi temp,$98
+sts ucsr0b, temp ; interruptions
+ldi temp,12
+sts ubrr0l,temp ; 9600 baud rate
+
+main: rjmp main
+
+rx_complete:lds temp, udr0
+	out ocr1a,temp
+	reti
 
 /*
 5. Obtenga una señal cuadrada en el pin pb0 de un periodo aproximado de 32 mseg, utilice un delay

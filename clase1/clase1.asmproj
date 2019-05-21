@@ -15,7 +15,7 @@
     <Name>clase1</Name>
     <RootNamespace>clase1</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
-    <EntryFile>$(MSBuildProjectDirectory)\clases\usart\led-manipulation.asm</EntryFile>
+    <EntryFile>$(MSBuildProjectDirectory)\clases\modo-sleep.asm</EntryFile>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
     <CacheFlash>true</CacheFlash>
@@ -116,6 +116,12 @@
     <Compile Include="clases\ctc.asm">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="clases\lcd\ejemplo-libro.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="clases\modo-sleep.asm">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="clases\modos-direccionamiento.asm">
       <SubType>Code</SubType>
     </Compile>
@@ -132,6 +138,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="clases\usart\led-manipulation.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="clases\usart\spi.asm">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="practica1.asm">
@@ -159,6 +168,7 @@
   <ItemGroup>
     <Folder Include="clases" />
     <Folder Include="clases\adc" />
+    <Folder Include="clases\lcd" />
     <Folder Include="clases\usart" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Assembler.targets" />

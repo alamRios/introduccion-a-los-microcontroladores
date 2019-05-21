@@ -7,7 +7,7 @@
   <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
   <DIR>F:\Programas\AVRStudio-4\AvrAssembler2\Appnotes</DIR>
  </INCLUDE_PATH>
- <SOURCE_FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\usart\led-manipulation.asm</SOURCE_FILE>
+ <SOURCE_FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\modo-sleep.asm</SOURCE_FILE>
  <INCLUDED_FILES>
   <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m48padef.inc</FILE>
  </INCLUDED_FILES>
@@ -22,10 +22,11 @@
   <FILE>clase1.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <reset><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\usart\led-manipulation.asm</FILE><LINE>15</LINE></reset>
-  <rx_complete><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\usart\led-manipulation.asm</FILE><LINE>43</LINE></rx_complete>
-  <main><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\usart\led-manipulation.asm</FILE><LINE>29</LINE></main>
-  <turn_on><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\usart\led-manipulation.asm</FILE><LINE>35</LINE></turn_on>
-  <turn_off><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\usart\led-manipulation.asm</FILE><LINE>39</LINE></turn_off>
+  <reset><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\modo-sleep.asm</FILE><LINE>17</LINE></reset>
+  <waking_up><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\modo-sleep.asm</FILE><LINE>40</LINE></waking_up>
+  <main><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\modo-sleep.asm</FILE><LINE>29</LINE></main>
+  <delay_500ms><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\modo-sleep.asm</FILE><LINE>43</LINE></delay_500ms>
+  <s1><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\modo-sleep.asm</FILE><LINE>44</LINE></s1>
+  <s2><FILE>C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\modo-sleep.asm</FILE><LINE>45</LINE></s2>
  </LABELS>
 </ASSEMBLER_INFO>

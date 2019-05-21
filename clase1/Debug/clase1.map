@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.7  C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\usart\led-manipulation.asm Mon Apr 15 21:23:58 2019
+AVRASM ver. 2.2.7  C:\Users\Turing\Documents\Atmel Studio\7.0\micros\clase1\clases\modo-sleep.asm Mon May 20 20:55:51 2019
 
 
 EQU  SIGNATURE_000 0000001e
@@ -685,8 +685,11 @@ EQU  TWIaddr      00000018
 EQU  SPMRaddr     00000019
 EQU  INT_VECTORS_SIZE 0000001a
 DEF  temp         r16
-CSEG reset        00000013
-CSEG rx_complete  0000002a
-CSEG main         0000001f
-CSEG turn_on      00000024
-CSEG turn_off     00000027
+DEF  cont1        r17
+DEF  cont2        r18
+CSEG reset        00000004
+CSEG waking_up    00000019
+CSEG main         0000000f
+CSEG delay_500ms  0000001b
+CSEG s1           0000001c
+CSEG s2           0000001d
